@@ -30,9 +30,9 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public Customer getCustomerById(Long id) {
+	public Customer getCustomerById(Long Id) {
 		
-		return customerRepository.findById(id).get();
+		return customerRepository.findById(Id).get();
 	}
 
 
@@ -44,8 +44,8 @@ public class CustomerServiceImpl implements CustomerService{
 
 
 	@Override
-	public void deltedCustomerById(Long id) {
-		customerRepository.deleteById(id);
+	public void deltedCustomerById(Long Id) {
+		customerRepository.deleteById(Id);
 		
 	}
 }

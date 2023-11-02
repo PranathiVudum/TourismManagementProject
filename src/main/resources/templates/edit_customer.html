@@ -2,7 +2,7 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Tourism Management Project</title>
+<title>Tourism Management </title>
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -11,7 +11,7 @@
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Tourism  Management Project</a>
+  <a class="navbar-brand" href="#">Tourism  Management </a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -67,6 +67,43 @@
 							placeholder="Enter Customer Phno" 
 							/>
 						</div>
+						<div class ="form-group">
+							<label> Location </label>
+							<input
+							type = "text"
+							name = "Location"
+							th:field = "*{Location}"
+							class = "form-control"
+							placeholder="Enter Customer Location" />
+						</div>
+						<div class ="form-group">
+							<label> Guide </label>
+							<input
+							type = "text"
+							name = "Guide"
+							th:field = "*{Guide}"
+							class = "form-control"
+							placeholder="Enter Customer Guide" />
+						</div>
+						<div class ="form-group">
+							<label> Food_Tpye </label>
+							<input
+							type = "text"
+							name = "Food_Type"
+							th:field = "*{Food_Type}"
+							class = "form-control"
+							placeholder="Enter Customer Food_Type" />
+						</div>
+						<div class ="form-group">
+							<label> FeedBack </label>
+							<input
+							type = "text"
+							name = "FeedBack"
+							th:field = "*{FeedBack}"
+							class = "form-control"
+							placeholder="Enter Customer FeedBack" />
+						</div>
+						
 						
 						<div class = "box-footer">
 							<button type="submit" class = "btn btn-primary">

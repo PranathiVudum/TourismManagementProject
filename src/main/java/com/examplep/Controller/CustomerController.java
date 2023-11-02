@@ -41,25 +41,29 @@ public String listCustomer(Model model) {
 	return "redirect:/customer";
 	
 }
-@GetMapping("/customer/edit/{id}")
-public String editCustomerForm(@PathVariable Long id,Model model) {
-	model.addAttribute("customer",customerService.getCustomerById(id));
+@GetMapping("/customer/edit/{Id}")
+public String editCustomerForm(@PathVariable Long Id,Model model) {
+	model.addAttribute("customer",customerService.getCustomerById(Id));
 	return "edit_customer";
 
 }
 
-      @PostMapping("/customer/{id}")
-       public String updateCustomer(@PathVariable Long id,
+      @PostMapping("/customer/{Id}")
+       public String updateCustomer(@PathVariable Long Id,
     		   @ModelAttribute("customer")Customer customer,
       Model model){
     	  
     	  
-    	  //get customer from database by id 
-    	  Customer existingCustomer=customerService.getCustomerById(id);
-    	  existingCustomer.setCId(id);
+    	  //get customer from database by Id 
+    	  Customer existingCustomer=customerService.getCustomerById(Id);
+    	  existingCustomer.setCId(Id);
     	  existingCustomer.setCName(customer.getCName());
     	  existingCustomer.setCMail(customer.getCMail());
     	  existingCustomer.setCPhno(customer.getCPhno());
+    	  existingCustomer.setLocation(customer.getLocation());
+    	  existingCustomer.setGuide(customer.getGuide());
+    	  existingCustomer.setFood_Type(customer.getFood_Type());
+    	  existingCustomer.setFeedBack(customer.getFeedBack());
      
     	  //save updated customer object
     	  customerService.updateCustomer(existingCustomer);
@@ -67,9 +71,9 @@ public String editCustomerForm(@PathVariable Long id,Model model) {
       }
     	  
     	  //handler method to delete customer request
-      @GetMapping("/customer/{id}")
-      public String deleteCustomer(@PathVariable Long id) {
-    	  customerService.deltedCustomerById(id);
+      @GetMapping("/customer/{Id}")
+      public String deleteCustomer(@PathVariable Long Id) {
+    	  customerService.deltedCustomerById(Id);
     	  return "redirect:/customer";
       }
 }
