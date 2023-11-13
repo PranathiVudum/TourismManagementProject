@@ -1,10 +1,13 @@
 package com.examplep.model;
 
+
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+
 import jakarta.persistence.Table;
 
 @Entity
@@ -12,8 +15,8 @@ import jakarta.persistence.Table;
 public class Customer {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="CId")
-	private Long CId;
+	@Column(name="Id")
+	private Long Id;
 	@Column(name="CName")
 	private String CName;
 	@Column(name="CMail")
@@ -28,11 +31,15 @@ public class Customer {
 	private String Food_Type;
 	@Column (name="FeedBack")
 	private String FeedBack;
+	@Column(name="Actions")
+	private String Actions;
+	
+	
 	public Long getCId() {
-		return CId;
+		return Id;
 	}
 	public void setCId(Long cId) {
-		CId = cId;
+		Id = cId;
 	}
 	public String getCName() {
 		return CName;
@@ -76,10 +83,17 @@ public class Customer {
 	public void setFeedBack(String feedBack) {
 		FeedBack = feedBack;
 	}
+	
+	public String getActions() {
+		return Actions;
+	}
+	public void setActions(String actions) {
+		Actions = actions;
+	}
 	public Customer(Long cId, String cName, String cMail, String cPhno, String location, String guide, String food_Type,
-			String feedBack) {
+			String feedBack,String actions) {
 		super();
-		CId = cId;
+		Id = cId;
 		CName = cName;
 		CMail = cMail;
 		CPhno = cPhno;
@@ -87,12 +101,12 @@ public class Customer {
 		Guide = guide;
 		Food_Type = food_Type;
 		FeedBack = feedBack;
+		Actions=actions;
 	}
 	public Customer() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
 	
 	
 }

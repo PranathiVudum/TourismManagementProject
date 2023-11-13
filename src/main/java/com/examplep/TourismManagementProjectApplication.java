@@ -9,7 +9,9 @@ import com.examplep.Repository.CustomerRepository;
 @SpringBootApplication
 public class TourismManagementProjectApplication implements CommandLineRunner{
 
-    TourismManagementProjectApplication(CustomerRepository customerRepository) {
+	
+
+	TourismManagementProjectApplication(CustomerRepository customerRepository) {
     }
 
 	public static void main(String[] args) {
@@ -17,12 +19,7 @@ public class TourismManagementProjectApplication implements CommandLineRunner{
 	}
  @Override
 	public void run(String... args) throws Exception {
-		/*
-		Customer customer1=new Customer("Navaneeth","navaneeth@gmail.com","9098780987)");
-		customerRepository.save(customer1);
-		Customer customer2=new Customer("benny","benny@gmail.com","9876544321");
-		customerRepository.save(customer2);
-		*/
+		
 		
 	}
 

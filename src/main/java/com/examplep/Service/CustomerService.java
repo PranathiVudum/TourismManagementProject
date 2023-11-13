@@ -5,6 +5,8 @@ import java.util.List;
 import com.examplep.model.Customer;
 
 public interface CustomerService {
+	
+	
 	List<Customer>getAllCustomer();
 	
 	Customer saveCustomer(Customer customer);
@@ -14,5 +16,13 @@ public interface CustomerService {
 	Customer updateCustomer(Customer customer);
 	
     void deltedCustomerById(Long Id);
+
+	
+
+	
+	
+
+	
+
 
 }

@@ -7,9 +7,45 @@
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
+	<style>
+		B{
+			color: darkgreen;
+		}
+		
+		img{
+			width:20% ;
+			height:30%;
+			animation: diagonalScroll 5s linear infinite; 
+		}
+		i{
+			color:cadetblue;
+		}
+		h1{
+			color:darkkhaki;
+		}
+		body{
+			background-color: beige;
+			background-image: url('https://img.freepik.com/free-vector/background-template-with-plain-color-wall-happy-girl_1308-42790.jpg?w=900&t=st=1699699979~exp=1699700579~hmac=e39644affe4ba8ea84efefaba149d8eef81124e2319dffd79c3a33ba3ddfc84a');
+		    background-position: center;
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    }
+	form{ 
+			box-align:baseline;
+			background-image: url('https://img.freepik.com/free-vector/girl-with-travelling-objects-white-background_1308-87230.jpg?w=740&t=st=1699700279~exp=1699700879~hmac=9878a0d7d503419738e84f180122a9babf725ec93e6a9ecd25943d1e25317b48');
+		     background-size: 150%; 
+            background-position: center ;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: rgb(64, 128, 128); 
+            position: right;
+            
+		}
+		</style>
 </head>
 <body>
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+	
+<nav class="navbar navbar-expand-md bg-lightgreen navbar-light">
   <!-- Brand -->
   <a class="navbar-brand" href="#">Tourism  Management </a>
 
@@ -22,20 +58,27 @@
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
       <li class="nav-item">
-        <a class="nav-link" th:href="@{/students}">Customer Management</a>
+        <a class="nav-link" th:href="@{/customer}">Customer Management</a>
       </li>
     </ul>
   </div>
 </nav>
-<br>
-<br>
+
+
+<marquee behavior="scroll" direction="right" scrollamount="30">
+		<B>HAPPY JOURNEY</B>
+        <img src="https://img.freepik.com/free-vector/military-jet-plane-cartoon-with-pilot_1308-153211.jpg?w=1060&t=st=1699812574~exp=1699813174~hmac=2c395d1612e02584ee22639966c42d25a251a45d40009c30d72520e33bcce91f
+" alt="Scrolling Image"/>
+      <B>HURRY UPP!</B>
+    </marquee>
+<div th:style="'margin-left: auto; margin-right: 0; text-align: left; width: 800px;'">
 	<div class = "container">
 		<div class = "row">
 			<div class ="col-lg-6 col-md-6 col-sm-6 container justify-content-center card">
-				<h1 class = "text-center"> Update Customer </h1>
+				<h1 class = "text-center"> Refreshing You </h1>
 				<div class = "card-body">
-					<form th:action="@{/customer/{id} {id=$(customer.id)}}" th:object = "${customer}" method="POST">
-						<div class ="form-group">
+					<form th:action="@{/customer/{Id} (Id=${customer.cId})}" th:object = "${customer}" method="POST">
+						<i><div class ="form-group">
 							<label> Customer  Name </label>
 							<input
 							type = "text"
@@ -104,9 +147,10 @@
 							placeholder="Enter Customer FeedBack" />
 						</div>
 						
-						
-						<div class = "box-footer">
-							<button type="submit" class = "btn btn-primary">
+						</i>
+									
+												<div class = "box-footer">
+							<button type="submit" class = "btn btn-success">
 								Submit
 							</button>
 						</div>
@@ -116,5 +160,7 @@
 			</div>
 		</div>
 	</div>
+	
+	
 </body>
 </html>

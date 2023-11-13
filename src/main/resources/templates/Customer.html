@@ -2,17 +2,57 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
-<title>Tourism Management </title>
+<title >Tourism Management </title>
+
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
 	crossorigin="anonymous">
-	
+	<style>
+		B{
+			color:black;
+			width:20%;
+		}
+		
+		img {
+            width: 45%;
+            height: 300px;
+        }
+		b {
+            width: 10%;
+             height: 30px;
+            white-space: nowrap;
+            scroll-behavior: smooth;
+            scrollbar-width: 10px;
+            }
+        
+		i{
+			color:blanchedalmond;
+		}
+		p{
+			color:bisque;
+			size:10vmax;
+		}
+		
+		a{
+			color:cadetblue;
+		}
+		
+	body{
+            background-image: url('https://img.freepik.com/free-photo/tropical-landscape-with-coconut_23-2150286771.jpg?w=900&t=st=1699677626~exp=1699678226~hmac=6f081c6e2656baf72d71ca39d8a3c7184e63f62c1dc362c99d76ee4db8495823');
+            background-size: 100%; 
+            background-position: center up;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: rgb(255, 255, 255); 
+            }
+	</style>
 </head>
-<body>
-	<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+  <divbody>
+   
+	<nav class="navbar navbar-expand-md bg-lightgreen navbar-dark">
   <!-- Brand -->
-  <a class="navbar-brand" href="#">Customer Management Portal</a>
+  <a class="navbar-brand" href="#">Tourism Management Portal</a>
 
   <!-- Toggler/collapsibe Button -->
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -22,9 +62,7 @@
   <!-- Navbar links -->
   <div class="collapse navbar-collapse" id="collapsibleNavbar">
     <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" th:href="@{/customer}">Customer Management</a>
-      </li>
+      
     </ul>
   </div>
 </nav>
@@ -34,26 +72,32 @@
 
 	<div class ="container">
 		<div class = "row">
-			<h1> Customer List</h1>
+
+<small><p class="text-lg-start">
+🌟 Welcome to Tourism Management - Where Adventures Begin! 🌍</small></p>
 		</div>
+		 <i class="text-sm-start">
+  Start Experiencing By Clicking Here</i>
+
 		<div class="row">
 			<div class="col-lg-3">
-				<a th:href ="@{/customer/new}" class ="btn btn-primary btn-sm mb-3">Add Customer</a>
+				<a th:href ="@{/customer/new}" class ="btn btn-warning btn-sm mb-3">Click Me </a>
 			</div>
 		</div>
 		
 		
-	
-		<table class = "table table-striped table-bordered">
-			<thead class = "table-dark">
+			<table class = "table table-striped table-bordered">
+			<thead class = "table-green">
 				<tr>
-					<th> Customer Name</th>
-					<th> Customer Mail</th>
-					<th> Customer Phno </th>
-					<th> Location</th>
-					<th> Guide</th>
-					<th> Food_Type</th>
-					<th>FeedBack </th>
+					<th bgcolor="cadetblue"> Customer Name</th>
+					<th bgcolor="cadetblue" > Customer Mail</th>
+					<th bgcolor="cadetblue"> Customer Phno </th>
+					<th bgcolor="cadetblue"> Location</th>
+					<th bgcolor="cadetblue"> Guide</th>
+					<th bgcolor="cadetblue"> Food_Type</th>
+					<th bgcolor="cadetblue">FeedBack </th>
+					<th bgcolor="cadetblue">Actions </th>
+					
 				</tr>
 			</thead>
 			
@@ -66,11 +110,12 @@
 					<td th:text = "${customer.Guide}"></td>
 					<td th:text = "${customer.Food_Type}"></td>
 					<td th:text = "${customer.FeedBack}"></td>
-				<td>
-					<a th:href="@{/customer/edit/{Id}{Id=$(customer.Id)}}"
-					class ="btn btn-primary">Update</a>
-					<a th:href="@{/customer/{Id}{Id=$(customer.Id)}}"
-					class ="btn btn-danger">Delete</a>
+					
+				<td >	
+					<a th:href="@{/customer/edit/{Id}(Id=${customer.cId})}"
+					class ="btn btn-success">Update</a>
+					<a th:href="@{/customer/{Id}(Id=${customer.cId})}"
+					class ="btn btn-info">Delete</a>
 				</td>
 						
 				</tr>
@@ -79,5 +124,17 @@
 		</table>
 		
 	</div>
+	
+	
+  	 <marquee behavior="scroll" direction="left" scrollamount="15">
+		  <B> Let's Go!
+        <img src="https://img.freepik.com/free-vector/road-trip-vacation-with-yellow-car_1308-115754.jpg?w=1060&t=st=1699809753~exp=1699810353~hmac=98ea8df801d9326d10560060848cd081f05a87d4df6366adf90d13ee74de5505
+" alt="Scrolling Image"/>
+      COME WITH ME
+
+</B>
+    </marquee>
+ 
+</div>
 </body>
 </html>
